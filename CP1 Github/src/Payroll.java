@@ -50,21 +50,34 @@ public class Payroll {
 	public static void input() {
 		//prompt for first name
 		System.out.print("Enter first name: ");
-		iFirstName = myScanner.next();		
-		
+		iFirstName = myScanner.next();	
+			
 		//prompt for last name
 		System.out.print("Enter last name: ");
 		iLastName = myScanner.next();	
+				
+		try {
+			//prompt, input and convert hours
+			System.out.print("Enter hours: ");
+			iString = myScanner.next();		
+			cHours = Integer.parseInt(iString);
+		}
+		catch (Exception e) {
+			System.out.println("Hours must be a whole number, defaulted to 0");
+			cHours = 0;
+		}
 		
-		//prompt, input and convert hours
-		System.out.print("Enter hours: ");
-		iString = myScanner.next();		
-		cHours = Integer.parseInt(iString);
+		try {
+			//prompt, input and convert rate
+			System.out.print("Enter rate: ");
+			iString = myScanner.next();		
+			cRate = Double.parseDouble(iString);
+		}
+		catch (Exception e) {
+			System.out.println("Rate must be a decimal number, defaulted to 0");
+			cRate = 0;
+		}
 		
-		//prompt, input and convert rate
-		System.out.print("Enter rate: ");
-		iString = myScanner.next();		
-		cRate = Double.parseDouble(iString);
 	}
 	
 	public static void calcs() {
